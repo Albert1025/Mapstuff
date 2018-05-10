@@ -1,0 +1,21 @@
+<h1> Login </h1>
+<% if flash[:alert] %>
+	<p id="notice"><%= flash[:alert] %>
+	</p>
+<% end %>
+
+<p>Please log in </p>
+
+<%= form_tag do %>
+
+<%= label_tag :name, 'Name' %>
+<%= text_field_tag :name, params[:name] %>
+
+<%= label_tag :password, 'Password' %>
+<%= password_field_tag :password, params[:password] %>
+
+<%= submit_tag "Login" %>
+
+<% end %>
+
+<%= link_to "Sign in with Google", "/auth/google_oauth2" %>

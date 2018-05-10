@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :locations
   get 'admin/index'
   get "/auth/google_oauth2" => "sessions#create_from_omniauth"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth";

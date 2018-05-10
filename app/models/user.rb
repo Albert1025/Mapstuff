@@ -1,6 +1,7 @@
 # In app/models/user.rb    
 class User < ApplicationRecord
  has_many :authentications, dependent: :destroy
+ attr_accessor :password, :password_confirmation
 
  def self.create_with_auth_and_hash(authentication, auth_hash)
    user = self.create!(
@@ -11,6 +12,17 @@ class User < ApplicationRecord
    user.authentications << authentication
    return user
  end
+
+
+def self.search(search)
+  if search
+    where(['name LIKE ?', "%#{search}%"])
+  else
+    all
+  end
+end
+
+
 
  # grab google to access google for user data
  def google_token

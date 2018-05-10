@@ -60,3 +60,7 @@ gem 'omniauth'
 gem 'figaro'
 
 gem 'omniauth-google-oauth2'
+
+
+gem 'geocoder'
+

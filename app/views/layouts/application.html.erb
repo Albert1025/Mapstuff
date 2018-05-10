@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lvlupyourself</title>
+    <title>Mapstuff</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,5 +10,9 @@
 
   <body>
     <%= yield %>
+
+    <%= link_to 'users', users_path %>
+    <%= link_to 'locations', locations_path %>
+    <%= link_to 'Home', root_path %>
   </body>
 </html>
